@@ -1,8 +1,6 @@
-/* Variables for easy color changes */
 :root {
-    --primary: #c5a059; /* Gold */
-    --dark: #0f172a;    /* Navy */
-    --light: #f8fafc;
+    --primary: #c5a059; 
+    --dark: #0f172a;    
     --white: #ffffff;
 }
 
@@ -10,32 +8,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: var(--light);
-}
-
-/* Navbar */
+/* Navbar & Dropdown Logic */
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 8%;
+    padding: 20px 8%;
     background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--dark);
+    z-index: 100;
 }
 
 .nav-links {
@@ -43,142 +28,91 @@ body {
     list-style: none;
 }
 
-.nav-links li a {
-    text-decoration: none;
-    color: var(--dark);
-    margin-left: 30px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    transition: 0.3s;
+.nav-links li {
+    position: relative;
+    margin-left: 25px;
 }
 
-.nav-links li a:hover {
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.nav-links a:hover {
     color: var(--primary);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: var(--white);
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    display: block;
 }
 
 /* Hero Section */
 .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1500&q=80');
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--white);
-    text-align: center;
+    color: white;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: var(--primary);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 50px;
-    transition: 0.3s;
-}
-
-/* Booking Bar */
+/* Booking Box */
 .booking-section {
-    max-width: 1000px;
-    margin: -40px auto 0;
-    position: relative;
-    z-index: 10;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
 }
 
-.booking-bar {
-    background: var(--white);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 30px;
+.booking-box {
+    background: white;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px;
 }
 
-.input-box label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #666;
+.input-group {
+    margin-bottom: 20px;
 }
 
-.input-box input, .input-box select {
+.input-group input, .input-group select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.book-btn {
-    background: var(--dark);
-    color: var(--white);
-    border: none;
+.btn {
+    width: 100%;
     padding: 15px;
+    background: var(--dark);
+    color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    align-self: end;
 }
 
-/* Room Gallery */
-.rooms-container {
-    padding: 80px 8%;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: var(--dark);
-}
-
-.room-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.room-card {
-    background: var(--white);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-
-.room-card:hover {
-    transform: translateY(-10px);
-}
-
-.room-img {
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-}
-
-.room-card h3 {
-    margin: 20px 0 10px;
-}
-
-.room-card p {
-    color: var(--primary);
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .booking-bar { grid-template-columns: 1fr; }
+.btn:hover {
+    background: var(--primary);
 }
