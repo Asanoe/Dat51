@@ -11,7 +11,6 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -24,9 +23,8 @@
 .nav-links li { margin-left: 25px; }
 .nav-links a { text-decoration: none; color: var(--dark); font-weight: bold; }
 
-/* Hero */
 .hero {
-    height: 60vh;
+    height: 50vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
@@ -38,43 +36,34 @@
     text-align: center;
 }
 
-.hero-btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-
-/* Room Gallery */
 .rooms-container { padding: 50px 8%; text-align: center; }
 .room-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 30px;
 }
 
 .room-card {
     background: white;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     padding-bottom: 20px;
+    overflow: hidden;
 }
 
-.room-img { height: 200px; background-size: cover; background-position: center; }
+.room-img { height: 180px; background-size: cover; }
 
-.card-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
+.book-btn {
     background: var(--dark);
     color: white;
-    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
 }
 
-.card-btn:hover { background: var(--primary); }
+.book-btn:hover {
+    background: var(--primary);
+}
