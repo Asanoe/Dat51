@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Su's Grand Resort</title>
+    <title>Ansu's Grand Resort</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,35 +13,35 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#rooms">Rooms</a></li>
-            <li><a href="confirmation.html">My Bookings</a></li>
+            <li><a href="#booking">Book Now</a></li>
         </ul>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-content">
             <h1>Welcome to Ansu's Paradise</h1>
-            <p>Luxury and comfort tailored for you.</p>
-            <a href="confirmation.html" class="hero-btn">View Special Offers</a>
+            <p>Experience luxury like never before.</p>
         </div>
     </header>
 
     <section id="rooms" class="rooms-container">
-        <h2 class="section-title">Our Signature Suites</h2>
+        <h2 class="section-title">Our Suites</h2>
         <div class="room-grid">
             <div class="room-card">
                 <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=500&q=80');"></div>
                 <h3>Ocean View</h3>
                 <p>$299/night</p>
-                <a href="confirmation.html" class="card-btn">Book This Room</a>
+                <button class="book-btn" onclick="confirmBooking('Ocean View')">Book Now</button>
             </div>
             <div class="room-card">
                 <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4df85b?auto=format&fit=crop&w=500&q=80');"></div>
                 <h3>Garden Villa</h3>
                 <p>$199/night</p>
-                <a href="confirmation.html" class="card-btn">Book This Room</a>
+                <button class="book-btn" onclick="confirmBooking('Garden Villa')">Book Now</button>
             </div>
         </div>
     </section>
 
+    <script src="script.js"></script>
 </body>
 </html>
